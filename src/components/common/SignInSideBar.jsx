@@ -11,6 +11,11 @@ import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Typography from '@mui/material/Typography';
+import {
+  getAuth,
+  signInWithEmailAndPassword,
+  createUserWithEmailAndPassword,
+} from 'firebase/auth';
 
 function Copyright(props) {
   return (
@@ -31,12 +36,15 @@ function Copyright(props) {
 }
 
 export default function SignInSide() {
+  const [email, setEmail] = React.useState('');
+  const [password, setPassword] = React.useState('');
+
   const handleSubmit = (event) => {
     event.preventDefault();
-    const data = new FormData(event.currentTarget);
+
     console.log({
-      email: data.get('email'),
-      password: data.get('password'),
+      email,
+      password,
     });
   };
 
@@ -89,6 +97,10 @@ export default function SignInSide() {
               label="Email Address"
               name="email"
               autoComplete="email"
+              value={email}
+              onChange={(event) => {
+                setEmail(event.target.value);
+              }}
               autoFocus
             />
             <TextField
@@ -99,6 +111,10 @@ export default function SignInSide() {
               label="Password"
               type="password"
               id="password"
+              value={password}
+              onChange={(event) => {
+                setPassword(event.target.value);
+              }}
               autoComplete="current-password"
             />
             <FormControlLabel
