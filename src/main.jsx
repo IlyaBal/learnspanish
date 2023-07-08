@@ -25,7 +25,11 @@ const router = createBrowserRouter([
   },
   {
     path: '/login',
-    element: <SignInSide test={1} />,
+    element: <SignInSide />,
+  },
+  {
+    path: '/main',
+    element: <App />,
   },
 ]);
 

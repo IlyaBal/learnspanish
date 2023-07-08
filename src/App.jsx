@@ -7,7 +7,7 @@ import Home from './components/home/Home';
 function App() {
   // const app = useFirebase();
 
-  return <></>;
+  return <><h2>Test</h2></>;
 }
 
 export default App;
