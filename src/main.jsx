@@ -8,6 +8,8 @@ import Home from './components/home/Home.jsx';
 import Form from './components/common/Form.jsx';
 import Root from './routes/root';
 import ErrorPage from './components/errorPage/errorPage.jsx';
+import SignIn from './components/common/SignIn.jsx';
+import UserRegistrationForm from './components/common/UserRegistrationForm.jsx';
 
 const router = createBrowserRouter([
   {
@@ -16,9 +18,13 @@ const router = createBrowserRouter([
     errorElement: <ErrorPage />,
   },
   {
-    path: '/login',
-    element: <Form />,
+    path: '/register',
+    element: <UserRegistrationForm />,
     errorElement: <ErrorPage />,
+  },
+  {
+    path: '/login',
+    element: <SignIn test={1} />,
   },
 ]);
 
