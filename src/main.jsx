@@ -10,6 +10,7 @@ import Root from './routes/root';
 import ErrorPage from './components/errorPage/errorPage.jsx';
 import SignIn from './components/common/SignIn.jsx';
 import UserRegistrationForm from './components/common/UserRegistrationForm.jsx';
+import SignInSide from './components/common/SignInSideBar.jsx';
 
 const router = createBrowserRouter([
   {
@@ -24,7 +25,7 @@ const router = createBrowserRouter([
   },
   {
     path: '/login',
-    element: <SignIn test={1} />,
+    element: <SignInSide test={1} />,
   },
 ]);
 
