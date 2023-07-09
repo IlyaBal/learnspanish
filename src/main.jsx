@@ -12,26 +12,29 @@ import SignIn from './components/common/SignIn.jsx';
 import UserRegistrationForm from './components/common/UserRegistrationForm.jsx';
 import SignInSide from './components/common/SignInSideBar.jsx';
 
-const router = createBrowserRouter([
-  {
-    path: '/',
-    element: <Root />,
-    errorElement: <ErrorPage />,
-  },
-  {
-    path: '/register',
-    element: <UserRegistrationForm />,
-    errorElement: <ErrorPage />,
-  },
-  {
-    path: '/login',
-    element: <SignInSide />,
-  },
-  {
-    path: '/main',
-    element: <App />,
-  },
-]);
+const router = createBrowserRouter(
+  [
+    {
+      path: '/',
+      element: <Root />,
+      errorElement: <ErrorPage />,
+    },
+    {
+      path: '/register',
+      element: <UserRegistrationForm />,
+      errorElement: <ErrorPage />,
+    },
+    {
+      path: '/login',
+      element: <SignInSide />,
+    },
+    {
+      path: '/main',
+      element: <App />,
+    },
+  ],
+  { basename: process.env.PUBLIC_URL }
+);
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
