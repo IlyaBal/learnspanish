@@ -13,32 +13,27 @@ import ErrorPage from './components/errorPage/errorPage.jsx';
 import UserRegistrationForm from './components/common/UserRegistrationForm.jsx';
 import SignInSide from './components/common/SignInSideBar.jsx';
 
-const router = createBrowserRouter(
-  [
-    {
-      path: '/',
-      element: <SignInSide />,
-      errorElement: <ErrorPage />,
-    },
-    {
-      path: '/register',
-      element: <UserRegistrationForm />,
-      errorElement: <ErrorPage />,
-    },
-    {
-      path: '/login',
-      element: <SignInSide />,
-      errorElement: <ErrorPage />,
-    },
-    {
-      path: '/main',
-      element: <Root />,
-    },
-  ],
+const router = createBrowserRouter([
   {
-    basename: '/learnspanish/',
-  }
-);
+    path: '/',
+    element: <SignInSide />,
+    errorElement: <ErrorPage />,
+  },
+  {
+    path: '/register',
+    element: <UserRegistrationForm />,
+    errorElement: <ErrorPage />,
+  },
+  {
+    path: '/login',
+    element: <SignInSide />,
+    errorElement: <ErrorPage />,
+  },
+  {
+    path: '/main',
+    element: <Root />,
+  },
+]);
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
