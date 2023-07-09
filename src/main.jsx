@@ -25,7 +25,7 @@ const router = createBrowserRouter(
       errorElement: <ErrorPage />,
     },
     {
-      path: '/login',
+      path: '/learnspanish',
       element: <SignInSide />,
     },
     {
@@ -33,7 +33,7 @@ const router = createBrowserRouter(
       element: <App />,
     },
   ],
-  { basename: process.env.PUBLIC_URL }
+  { basename: '/learnspanish' }
 );
 
 ReactDOM.createRoot(document.getElementById('root')).render(
