@@ -13,7 +13,7 @@ const router = createBrowserRouter(
   [
     {
       path: '/',
-      element: <Root />,
+      element: <SignInSide />,
       errorElement: <ErrorPage />,
     },
     {
@@ -28,7 +28,7 @@ const router = createBrowserRouter(
     },
     {
       path: '/main',
-      element: <App />,
+      element: <Root />,
     },
   ],
   {
