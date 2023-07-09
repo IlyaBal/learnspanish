@@ -9,7 +9,7 @@ export default defineConfig(({ command }) => {
   }
 
   if (command !== 'serve') {
-    config.base = import.meta.env.BASE_URL
+    config.base = '/learnspanish/'
   }
 
   return config
