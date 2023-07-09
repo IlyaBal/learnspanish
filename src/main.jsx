@@ -20,7 +20,7 @@ const router = createBrowserRouter(
       errorElement: <ErrorPage />,
     },
     {
-      path: '/register',
+      path: '/learnspanish/register',
       element: <UserRegistrationForm />,
       errorElement: <ErrorPage />,
     },
@@ -33,7 +33,9 @@ const router = createBrowserRouter(
       element: <App />,
     },
   ],
-  { basename: '/learnspanish' }
+  {
+    basename: '/learnspanish',
+  }
 );
 
 ReactDOM.createRoot(document.getElementById('root')).render(
