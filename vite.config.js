@@ -9,7 +9,7 @@ export default defineConfig(({ command }) => {
   }
 
   if (command !== 'serve') {
-    config.base = '/learnspanish/'
+    config.base = '/learnspanish'
   }
 
   return config
