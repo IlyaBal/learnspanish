@@ -30,7 +30,7 @@ const router = createBrowserRouter([
     errorElement: <ErrorPage />,
   },
   {
-    path: '/main',
+    path: '/main2',
     element: <Root />,
   },
 ]);
