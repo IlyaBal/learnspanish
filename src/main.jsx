@@ -33,7 +33,9 @@ const router = createBrowserRouter([
     path: '/main',
     element: <Root />,
   },
-]);
+]
+{ basename: '/learnspanish' }
+);
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
