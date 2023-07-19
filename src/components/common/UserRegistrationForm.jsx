@@ -1,3 +1,5 @@
+import { useState } from 'react';
+
 import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import CssBaseline from '@mui/material/CssBaseline';
@@ -8,39 +10,46 @@ import Box from '@mui/material/Box';
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
-import { Link } from 'react-router-dom';
-
-function Copyright(props) {
-  return (
-    <Typography
-      variant="body2"
-      color="text.secondary"
-      align="center"
-      {...props}
-    >
-      {'Copyright © '}
-      <Link color="inherit" to="/">
-        Learn Spanish
-      </Link>{' '}
-      {new Date().getFullYear()}
-      {'.'}
-    </Typography>
-  );
-}
-
+import { Link, useNavigate } from 'react-router-dom';
+import { getAuth, createUserWithEmailAndPassword } from 'firebase/auth';
+import { Copyright } from './Copyright';
+import useFirebaseConfig from '../useFirebaseConfig';
 export default function SignUp() {
-  const handleSubmit = (event) => {
+  const [app] = useFirebaseConfig();
+  const [error, setError] = useState('');
+  const navigate = useNavigate();
+
+  const handleSubmit = async (event) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
-    console.log({
+    const formData = {
       email: data.get('email'),
       password: data.get('password'),
-    });
+    };
+    const { email, password } = formData;
+    const auth = getAuth(app);
+
+    await createUserWithEmailAndPassword(auth, email, password)
+      .then((userCredential) => {
+        // Signed in
+        const user = userCredential.user;
+        console.log(user);
+        navigate('/login');
+        // ...
+      })
+      .catch((error) => {
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        console.log(errorCode, errorMessage);
+        // ..
+        setError(errorMessage);
+      });
   };
 
   return (
     <Container component="main" maxWidth="xs">
       <CssBaseline />
+      <Box>{error}</Box>
       <Box
         sx={{
           marginTop: 8,

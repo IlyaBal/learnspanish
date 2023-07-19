@@ -1,8 +1,9 @@
 import React, { useEffect } from 'react'
 import { initializeApp } from "firebase/app";
 
-export default function useFirebase() {
+export default function useFirebaseConfig() {
     const [app, setApp] = React.useState(null);
+
     useEffect(() => {
 
         const firebaseConfig = {
@@ -18,11 +19,10 @@ export default function useFirebase() {
         const appInitialized = initializeApp(firebaseConfig);
         setApp(appInitialized);
 
-
     }, [])
 
 
-    return app;
+    return [app]
 
 
 }
