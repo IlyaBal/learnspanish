@@ -20,7 +20,7 @@ export default function Root() {
       >
         <Toolbar sx={{ flexWrap: 'wrap' }}>
           <Typography variant="h6" color="inherit" noWrap sx={{ flexGrow: 1 }}>
-            Learn Spanish
+            Learn Spanish!
           </Typography>
           <nav>
             <Link
