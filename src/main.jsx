@@ -7,12 +7,18 @@ import Root from './routes/root';
 import ErrorPage from './components/errorPage/errorPage.jsx';
 import UserRegistrationForm from './components/common/UserRegistrationForm.jsx';
 import SignInSide from './components/common/SignInSideBar.jsx';
+import SignIn from './components/common/SignIn';
 
 const router = createBrowserRouter(
   [
     {
       path: '/',
       element: <SignInSide />,
+      errorElement: <ErrorPage />,
+    },
+    {
+      path: '/forgot-password',
+      element: <SignIn />,
       errorElement: <ErrorPage />,
     },
     {

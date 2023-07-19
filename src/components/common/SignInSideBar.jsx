@@ -16,6 +16,8 @@ import {
   createUserWithEmailAndPassword,
 } from 'firebase/auth';
 import { Link } from 'react-router-dom';
+import { signIn } from '../../utils/firebaseHelpers';
+import useFirebaseConfig from '../useFirebaseConfig';
 
 function Copyright(props) {
   return (
@@ -38,6 +40,7 @@ function Copyright(props) {
 export default function SignInSide() {
   const [email, setEmail] = React.useState('');
   const [password, setPassword] = React.useState('');
+  const [app] = useFirebaseConfig();
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -46,6 +49,8 @@ export default function SignInSide() {
       email,
       password,
     });
+    const auth = getAuth(app);
+    signIn(auth, email, password);
   };
 
   return (

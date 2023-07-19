@@ -9,15 +9,29 @@ import Container from '@mui/material/Container';
 import { Avatar } from '@mui/material';
 import LockOutlinedIcon from '@mui/icons-material/Person2';
 import { Link } from 'react-router-dom';
+import useFirebaseConfig from '../useFirebaseConfig';
+import { getAuth } from 'firebase/auth';
+import { signIn } from '../../utils/firebaseHelpers';
 
 export default function SignIn() {
+  const [app] = useFirebaseConfig();
+
   const handleSubmit = (event) => {
     event.preventDefault();
+
     const data = new FormData(event.currentTarget);
-    console.log({
+
+    const { email, password } = {
       email: data.get('email'),
       password: data.get('password'),
-    });
+    };
+    console.log('🚀 ~ file: SignIn.jsx:25 ~ handleSubmit ~ email:', email);
+    console.log(
+      '🚀 ~ file: SignIn.jsx:25 ~ handleSubmit ~ password:',
+      password
+    );
+    const auth = getAuth(app);
+    signIn(auth, email, password);
   };
 
   return (
