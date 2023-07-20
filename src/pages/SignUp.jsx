@@ -11,11 +11,11 @@ import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { Link, useNavigate } from 'react-router-dom';
-import { getAuth, createUserWithEmailAndPassword } from 'firebase/auth';
-import { Copyright } from './Copyright';
-import useFirebaseConfig from '../useFirebaseConfig';
+import { auth } from '../firebase';
+import { createUserWithEmailAndPassword } from 'firebase/auth';
+import { Copyright } from '../components/common/Copyright';
+
 export default function SignUp() {
-  const [app] = useFirebaseConfig();
   const [error, setError] = useState('');
   const navigate = useNavigate();
 
@@ -27,7 +27,6 @@ export default function SignUp() {
       password: data.get('password'),
     };
     const { email, password } = formData;
-    const auth = getAuth(app);
 
     await createUserWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
@@ -66,7 +65,7 @@ export default function SignUp() {
         </Typography>
         <Box component="form" noValidate onSubmit={handleSubmit} sx={{ mt: 3 }}>
           <Grid container spacing={2}>
-            <Grid item xs={12} sm={6}>
+            {/* <Grid item xs={12} sm={6}>
               <TextField
                 autoComplete="given-name"
                 name="firstName"
@@ -86,7 +85,7 @@ export default function SignUp() {
                 name="lastName"
                 autoComplete="family-name"
               />
-            </Grid>
+            </Grid> */}
             <Grid item xs={12}>
               <TextField
                 required

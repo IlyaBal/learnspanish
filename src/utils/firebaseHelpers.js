@@ -1,6 +1,6 @@
 import { signInWithEmailAndPassword, signOut } from "firebase/auth";
-
-const signIn = async (auth, email, password) => {
+import { auth } from '../firebase';
+const signIn = async (email, password) => {
     try {
         const userCredential = await signInWithEmailAndPassword(
             auth,
@@ -14,9 +14,10 @@ const signIn = async (auth, email, password) => {
     }
 };
 
-const signOutUser = async (auth) => {
+const signOutUser = async () => {
     try {
-        await signOut(auth)
+        await signOut(auth);
+
         return true
     } catch (error) {
         return false

@@ -10,14 +10,9 @@ import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Typography from '@mui/material/Typography';
-import {
-  getAuth,
-  signInWithEmailAndPassword,
-  createUserWithEmailAndPassword,
-} from 'firebase/auth';
-import { Link } from 'react-router-dom';
-import { signIn } from '../../utils/firebaseHelpers';
-import useFirebaseConfig from '../useFirebaseConfig';
+import { Link, useNavigate } from 'react-router-dom';
+import { signIn } from '../utils/firebaseHelpers';
+import { useAuth } from '../provider/authProvider';
 
 function Copyright(props) {
   return (
@@ -37,20 +32,26 @@ function Copyright(props) {
   );
 }
 
-export default function SignInSide() {
+export default function Login() {
   const [email, setEmail] = React.useState('');
   const [password, setPassword] = React.useState('');
-  const [app] = useFirebaseConfig();
+  const navigate = useNavigate();
+  const { setToken } = useAuth();
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
 
     console.log({
       email,
       password,
     });
-    const auth = getAuth(app);
-    signIn(auth, email, password);
+
+    const user = await signIn(email, password);
+    if (user) {
+      setToken(JSON.stringify(user));
+
+      navigate('/');
+    }
   };
 
   return (
@@ -136,9 +137,9 @@ export default function SignInSide() {
             </Button>
             <Grid container>
               <Grid item xs>
-                <Link to="/forgot-password" variant="body2">
+                {/* <Link to="/forgot-password" variant="body2">
                   Forgot password?
-                </Link>
+                </Link> */}
               </Grid>
               <Grid item>
                 <Link to="/register" variant="body2">

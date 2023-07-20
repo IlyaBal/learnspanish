@@ -6,9 +6,29 @@ import CssBaseline from '@mui/material/CssBaseline';
 
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
-import Link from '@mui/material/Link';
+import Link from '../components/common/Link';
+import { signOutUser } from '../utils/firebaseHelpers';
+import { useAuth } from '../provider/authProvider';
+import { useNavigate } from 'react-router-dom';
+// import { signOutUser } from 'firebase/auth';
+export default function Dashboard() {
+  const { token, setToken } = useAuth();
+  const navigate = useNavigate();
+  // if (!token) return null;
+  console.log('🚀 ~ file: Dashboard.jsx:16 ~ Dashboard ~ token:', token);
 
-export default function Root() {
+  const handleLogout = () => {
+    setToken();
+    navigate('/', { replace: true });
+  };
+
+  const onSignOutButtonClick = () => {
+    signOutUser();
+    setTimeout(() => {
+      handleLogout();
+    }, 1 * 100);
+  };
+
   return (
     <>
       <CssBaseline />
@@ -20,36 +40,41 @@ export default function Root() {
       >
         <Toolbar sx={{ flexWrap: 'wrap' }}>
           <Typography variant="h6" color="inherit" noWrap sx={{ flexGrow: 1 }}>
-            Learn Spanish!
+            Learn Spanish! {token.providerData?.email}
           </Typography>
           <nav>
             <Link
               variant="button"
               color="text.primary"
-              href="#"
+              href="/lessons"
               sx={{ my: 1, mx: 1.5 }}
             >
-              Features
+              Lessons
             </Link>
             <Link
               variant="button"
               color="text.primary"
-              href="#"
+              href="/tests"
               sx={{ my: 1, mx: 1.5 }}
             >
-              Enterprise
+              Tests
             </Link>
             <Link
               variant="button"
               color="text.primary"
-              href="#"
+              href="/scores"
               sx={{ my: 1, mx: 1.5 }}
             >
-              Support
+              Scores
             </Link>
           </nav>
-          <Button href="#" variant="outlined" sx={{ my: 1, mx: 1.5 }}>
-            Login
+          <Button
+            href="#"
+            variant="outlined"
+            sx={{ my: 1, mx: 1.5 }}
+            onClick={onSignOutButtonClick}
+          >
+            Sign Out
           </Button>
         </Toolbar>
       </AppBar>
