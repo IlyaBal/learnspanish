@@ -32,6 +32,20 @@ const Routes = () => {
         {
           path: '/',
           element: <Dashboard />,
+          children: [
+            {
+              path: '/lessons',
+              element: <Lessons />,
+            },
+            {
+              path: '/tests',
+              element: <Tests />,
+            },
+            {
+              path: '/scores',
+              element: <Scores />,
+            },
+          ],
         },
         {
           path: '/profile',
@@ -40,18 +54,6 @@ const Routes = () => {
         {
           path: '/logout',
           element: <Logout />,
-        },
-        {
-          path: '/lessons',
-          element: <Lessons />,
-        },
-        {
-          path: '/tests',
-          element: <Tests />,
-        },
-        {
-          path: '/scores',
-          element: <Scores />,
         },
       ],
     },

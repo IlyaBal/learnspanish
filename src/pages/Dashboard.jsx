@@ -9,7 +9,8 @@ import Typography from '@mui/material/Typography';
 import Link from '../components/common/Link';
 import { signOutUser } from '../utils/firebaseHelpers';
 import { useAuth } from '../provider/authProvider';
-import { useNavigate } from 'react-router-dom';
+import { Outlet, useNavigate } from 'react-router-dom';
+import './Dashboard.css';
 // import { signOutUser } from 'firebase/auth';
 export default function Dashboard() {
   const { setToken, getToken } = useAuth();
@@ -87,6 +88,9 @@ export default function Dashboard() {
           </Button>
         </Toolbar>
       </AppBar>
+      <main className="dashboard">
+        <Outlet />
+      </main>
     </>
   );
 }
