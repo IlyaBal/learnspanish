@@ -12,10 +12,11 @@ import { useAuth } from '../provider/authProvider';
 import { useNavigate } from 'react-router-dom';
 // import { signOutUser } from 'firebase/auth';
 export default function Dashboard() {
-  const { token, setToken } = useAuth();
+  const { setToken, getToken } = useAuth();
   const navigate = useNavigate();
   // if (!token) return null;
-  console.log('🚀 ~ file: Dashboard.jsx:16 ~ Dashboard ~ token:', token);
+  const user = getToken();
+  console.log('🚀 ~ file: Dashboard.jsx:16 ~ Dashboard ~ token:', user.uid);
 
   const handleLogout = () => {
     setToken();
@@ -39,8 +40,16 @@ export default function Dashboard() {
         sx={{ borderBottom: (theme) => `1px solid ${theme.palette.divider}` }}
       >
         <Toolbar sx={{ flexWrap: 'wrap' }}>
-          <Typography variant="h6" color="inherit" noWrap sx={{ flexGrow: 1 }}>
-            Learn Spanish! {token.providerData?.email}
+          <Typography variant="h5" color="blue" noWrap sx={{ flexGrow: 1 }}>
+            Learn Spanish!
+          </Typography>
+          <Typography
+            variant="h6"
+            color="darkviolet"
+            noWrap
+            sx={{ flexGrow: 1 }}
+          >
+            Welcome {user?.email}!
           </Typography>
           <nav>
             <Link

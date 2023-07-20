@@ -28,6 +28,7 @@ const AuthProvider = ({ children }) => {
     () => ({
       token,
       setToken,
+      getToken: () => (token ? JSON.parse(token) : null),
     }),
     [token]
   );

@@ -5,6 +5,9 @@ import Login from '../pages/Login';
 import Logout from '../pages/Logout';
 import SignUp from '../pages/SignUp';
 import Dashboard from '../pages/Dashboard';
+import Lessons from '../pages/Lessons';
+import Tests from '../pages/Tests';
+import Scores from '../pages/Scores';
 const Routes = () => {
   const { token } = useAuth();
 
@@ -37,6 +40,18 @@ const Routes = () => {
         {
           path: '/logout',
           element: <Logout />,
+        },
+        {
+          path: '/lessons',
+          element: <Lessons />,
+        },
+        {
+          path: '/tests',
+          element: <Tests />,
+        },
+        {
+          path: '/scores',
+          element: <Scores />,
         },
       ],
     },
