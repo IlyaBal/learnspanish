@@ -37,23 +37,28 @@ export default function Login() {
   const [password, setPassword] = React.useState('');
   const navigate = useNavigate();
   const { setToken } = useAuth();
-
+  const [error, setError] = React.useState();
   const handleSubmit = async (event) => {
     event.preventDefault();
-
+    setError();
     console.log({
       email,
       password,
     });
 
     const user = await signIn(email, password);
-    if (user) {
+    if (user.accessToken) {
       setToken(JSON.stringify(user));
 
       navigate('/');
+    } else if (user.error) {
+      setError(user.error);
     }
   };
 
+  if (error) {
+    console.log(error);
+  }
   return (
     <Grid container component="main" sx={{ height: '100vh' }}>
       <CssBaseline />
@@ -140,6 +145,9 @@ export default function Login() {
                 {/* <Link to="/forgot-password" variant="body2">
                   Forgot password?
                 </Link> */}
+                <span style={{ color: 'red', fontWeight: 'bold' }}>
+                  {error}
+                </span>
               </Grid>
               <Grid item>
                 <Link to="/register" variant="body2">
