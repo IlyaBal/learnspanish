@@ -2,12 +2,17 @@
   "data": [
     {
       "pageNumber": 1,
-      "title": "Las Frutas (Фрукты)",
+      "title": "Greetings",
       "file": "lesson1.json"
     },
     {
       "pageNumber": 2,
       "title": "Números cardinales (Числа)"
+    },
+    {
+      "pageNumber": 3,
+      "title": "Las Frutas (Фрукты)",
+      "file": "lesson3.json"
     }
   ]
 }
