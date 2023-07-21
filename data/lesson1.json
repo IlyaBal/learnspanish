@@ -1,8 +1,10 @@
 {
-  "title": "Las Frutas",
+  "title": "First Lesson",
   "data": [
-    ["La manzana", "Яблоко"],
-    ["el plátano", "Банан"],
-    ["La naranja", "Апельсин"]
+    ["Comer", "Есть"],
+    ["Hola", "Привет"],
+    ["Buenas dias!", "Добрый день!"],
+    ["Gracias", "Спасибо"],
+    ["Por favor", "Пожалуйста"]
   ]
 }
