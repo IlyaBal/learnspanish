@@ -9,6 +9,7 @@ import Lessons from '../pages/LessonList';
 import Tests from '../pages/Tests';
 import Scores from '../pages/Scores';
 import LessonList from '../pages/LessonList';
+import Lesson from '../pages/Lesson';
 const Routes = () => {
   const { token } = useAuth();
 
@@ -37,6 +38,10 @@ const Routes = () => {
             {
               path: '/lessons',
               element: <LessonList />,
+            },
+            {
+              path: '/lessons/:Id',
+              element: <Lesson />,
             },
             {
               path: '/tests',
