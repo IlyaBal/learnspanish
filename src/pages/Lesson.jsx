@@ -1,16 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-
+import axios from 'axios';
 export default function Lesson() {
   const [lessonData, setLessonData] = useState(null);
   const [index, setIndex] = useState(0);
   let { Id } = useParams();
   useEffect(() => {
     const loadData = async () => {
-      const response = await fetch(`/data/lesson${Id}.json`);
-      const json = await response.json();
-
-      setLessonData(json);
+      const response = await axios(`data/lesson${Id}.json`);
+      setLessonData(response.data);
     };
     loadData();
   }, [Id]);
