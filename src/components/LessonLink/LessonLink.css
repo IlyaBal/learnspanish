@@ -1,0 +1,10 @@
+.lesson-link {
+  color: white;
+  font-size: 2rem;
+  text-decoration: none;
+  display: block;
+}
+
+.lesson-link:hover {
+  color: rgb(0, 187, 255);
+}

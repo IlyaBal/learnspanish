@@ -1,0 +1,13 @@
+{
+  "data": [
+    {
+      "pageNumber": 1,
+      "title": "Las Frutas (Фрукты)",
+      "file": "lesson1.json"
+    },
+    {
+      "pageNumber": 2,
+      "title": "Números cardinales (Числа)"
+    }
+  ]
+}
