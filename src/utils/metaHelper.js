@@ -12,5 +12,5 @@ export const getBaseUrl = () => {
 
 export const getImageFolderUrl = () => {
     const base = getBaseUrl();
-    return `${base}/public/images/`;
+    return `${base}/images/`;
 }
