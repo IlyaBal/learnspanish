@@ -4,10 +4,13 @@ import axios from 'axios';
 import './Lesson.css';
 import Image from '../components/Image';
 import { getImageFolderUrl } from '../utils/metaHelper';
+import LearnCard from '../components/LearnCard/LearnCard';
+import PracticeCard from '../components/PracticeCard/PracticeCard';
 
 export default function Lesson() {
   const [lessonData, setLessonData] = useState(null);
   const [index, setIndex] = useState(0);
+  const [mode, setMode] = useState('practice');
   let { Id } = useParams();
   const fileName = `${lessonData?.data[index][2]}`;
 
@@ -41,22 +44,25 @@ export default function Lesson() {
     imageFolderUrl
   );
 
+  const getCard = () => {
+    const word = lessonData?.data[index][0] ?? '';
+    const translation = lessonData?.data[index][1] ?? '';
+    const imageUrl = `${imageFolderUrl}${lessonData?.data[index][2]}`;
+    if (mode === 'practice') {
+      return (
+        <PracticeCard word={word} translation={translation} image={imageUrl} />
+      );
+    }
+    return <LearnCard word={word} translation={translation} image={imageUrl} />;
+  };
+
   return (
     <div className="word-card">
       <h2>
         Lesson {Id} {lessonData?.title}
       </h2>
       <hr></hr>
-      <div className="word-card-body">
-        <h1>{lessonData?.data[index][0]}</h1>
-        <h1>{lessonData?.data[index][1]}</h1>
-
-        <Image
-          src={`${imageFolderUrl}${lessonData?.data[index][2]}`}
-          alt={lessonData?.data[index][0]}
-          width={300}
-        ></Image>
-      </div>
+      <div>{getCard()}</div>
     </div>
   );
 }
