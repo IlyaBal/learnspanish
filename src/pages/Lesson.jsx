@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom';
 import axios from 'axios';
 import './Lesson.css';
 import Image from '../components/Image';
+import { getImageFolderUrl } from '../utils/metaHelper';
 
 export default function Lesson() {
   const [lessonData, setLessonData] = useState(null);
@@ -34,6 +35,12 @@ export default function Lesson() {
     };
   }, [lessonData]);
 
+  const imageFolderUrl = getImageFolderUrl();
+  console.log(
+    '🚀 ~ file: Lesson.jsx:41 ~ Lesson ~ imageFolderUrl:',
+    imageFolderUrl
+  );
+
   return (
     <div className="word-card">
       <h2>
@@ -45,7 +52,7 @@ export default function Lesson() {
         <h1>{lessonData?.data[index][1]}</h1>
 
         <Image
-          src={`/src/assets/images/${lessonData?.data[index][2]}`}
+          src={`${imageFolderUrl}${lessonData?.data[index][2]}`}
           alt={lessonData?.data[index][0]}
           width={300}
         ></Image>
