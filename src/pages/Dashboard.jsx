@@ -59,7 +59,7 @@ export default function Dashboard() {
               href="/lessons"
               sx={{ my: 1, mx: 1.5 }}
             >
-              Lessons
+              Lessons!
             </Link>
             <Link
               variant="button"

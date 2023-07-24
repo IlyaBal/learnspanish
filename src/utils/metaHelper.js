@@ -12,5 +12,8 @@ export const getBaseUrl = () => {
 
 export const getImageFolderUrl = () => {
     const base = getBaseUrl();
-    return `${base}/images/`;
+    const path = `${base}/images/`;
+    console.log("🚀 ~ file: metaHelper.js:17 ~ getImageFolderUrl ~ path:", path);
+
+    return path;
 }
