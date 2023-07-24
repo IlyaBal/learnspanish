@@ -2,7 +2,7 @@
   "title": "Las Frutas",
   "data": [
     ["La manzana", "Яблоко", "apple.png"],
-    ["el plátano", "Банан", "banana.png"],
+    ["El plátano", "Банан", "banana.png"],
     ["La naranja", "Апельсин", "naranja.jpeg"]
   ]
 }
