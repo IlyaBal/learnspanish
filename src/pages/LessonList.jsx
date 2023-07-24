@@ -9,7 +9,7 @@ export default function LessonList() {
 
   return (
     <>
-      <h2>Lessons</h2>
+      <h2>Lessons!</h2>
       {jsonData.data.map((d) => (
         <LessonLink key={d.pageNumber} {...d} />
       ))}
