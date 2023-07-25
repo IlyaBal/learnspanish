@@ -18,7 +18,7 @@ export default function PracticeCard({ word, translation, image }) {
   ) : null;
   return (
     <div className="word-card-body" onClick={onCardClick}>
-      <h1 style={{ fontSize: '6rem' }}>{word}</h1>
+      <h1 className="word-text">{word}</h1>
       {details}
     </div>
   );
