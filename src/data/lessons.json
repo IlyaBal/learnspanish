@@ -2,17 +2,23 @@
   "data": [
     {
       "pageNumber": 1,
-      "title": "Greetings",
+      "title": "Oraciones simples",
       "file": "lesson1.json"
     },
     {
       "pageNumber": 2,
-      "title": "Números cardinales (Числа)"
+      "title": "Oraciones simples2",
+      "file": "lesson2.json"
     },
     {
       "pageNumber": 3,
       "title": "Las Frutas (Фрукты)",
       "file": "lesson3.json"
+    },
+    {
+      "pageNumber": 4,
+      "title": "Spain (Фрукты)",
+      "file": "lesson4.json"
     }
   ]
 }

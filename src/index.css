@@ -1,0 +1,15 @@
+.lesson-content {
+    margin-top: 4rem;
+    height: 60vh;
+    /* background-color: antiquewhite; */
+    color: rgb(18, 17, 19);
+    overflow-y: auto;
+    padding: 2rem;
+    width: 50%;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-style: italic;
+    
+    font-size: 2rem;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+    
+}
