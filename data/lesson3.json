@@ -4,6 +4,7 @@
     ["La manzana", "Яблоко", "apple.png"],
     ["El plátano", "Банан", "banana.png"],
     ["La naranja", "Апельсин", "naranja.jpeg"],
-    ["Pepino", "Огурец", "cucumber-1.jpg"]
+    ["Pepino", "Огурец", "cucumber-1.jpg"],
+    ["", "", ""]
   ]
 }

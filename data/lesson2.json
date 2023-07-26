@@ -1,8 +1,8 @@
 {
-  "title": "Las Frutas",
-  "data": [
-    ["Uno", "1"],
-    ["Dos", "2"],
-    ["Tres", "3"]
+  "title": "Oraciones simples 2",
+  "data":[["Adios", "Пока"],
+    ["Buenas noches!", "Спокойной ночи!"],
+    ["Perdon", "прости"],
+    ["Disculpe", "извини"]
   ]
 }
