@@ -10,6 +10,10 @@ import Tests from '../pages/Tests';
 import Scores from '../pages/Scores';
 import LessonList from '../pages/LessonList';
 import Lesson from '../pages/Lesson';
+import LessonText from '../components/Text/LessonText';
+import LessonInfoSection from '../components/Text/LessonText';
+import LessonCards from '../components/LessonCards/LessonCards';
+import LessonTest from '../components/LessonTest/LessonTest';
 const Routes = () => {
   const { token } = useAuth();
 
@@ -42,6 +46,20 @@ const Routes = () => {
             {
               path: '/lessons/:Id',
               element: <Lesson />,
+              children: [
+                {
+                  path: '',
+                  element: <LessonInfoSection />,
+                },
+                {
+                  path: 'card',
+                  element: <LessonCards />,
+                },
+                {
+                  path: 'test',
+                  element: <LessonTest />,
+                },
+              ],
             },
             {
               path: '/tests',

@@ -11,8 +11,7 @@ export default function PracticeCard({ word, translation, image }) {
   const details = showDetails ? (
     <>
       <h1>{translation}</h1>
-
-      <Image src={image} alt={word} width={300}></Image>
+      <Image src={image} alt={word}></Image>
     </>
   ) : null;
   return (

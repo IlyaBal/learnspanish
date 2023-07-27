@@ -9,7 +9,8 @@ export default function LessonList() {
 
   return (
     <>
-      <h2>Lessons!</h2>
+      <h2 style={{ color: 'lightblue' }}>Lessons</h2>
+      <hr />
       {jsonData.data.map((d) => (
         <LessonLink key={d.pageNumber} {...d} />
       ))}

@@ -1,5 +1,5 @@
-.word-card {
-}
+/* .word-card {
+} */
 
 .word-card .word-card-body {
   margin: auto;
@@ -9,4 +9,8 @@
   border-radius: 50px;
   color: black;
   text-align: center;
+}
+
+.word-card .word-card-body img {
+  height: 35vh;
 }
