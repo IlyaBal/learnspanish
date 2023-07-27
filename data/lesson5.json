@@ -1,0 +1,20 @@
+{
+  "title": "Las Frutas",
+  "data": [
+    [
+      "word1",
+      "translation1",
+      "banana.png"
+    ],
+    [
+      "word2",
+      "translation2",
+      "word2.png"
+    ],
+    [
+      "",
+      "",
+      ""
+    ]
+  ]
+}
