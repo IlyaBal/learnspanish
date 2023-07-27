@@ -3,8 +3,14 @@ import React from 'react'
 export default function Lesson4() {
     return (
         <div >
-            <div>Lesson3</div>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque unde beatae optio veniam ratione debitis exercitationem et officia, accusamus consequatur cupiditate, architecto laborum sapiente! Vero aut quam cupiditate doloribus sint?</p>
+            <div>Lesson 4</div>
+            <h1>Las frutas</h1>
+            <p>вам обязательно нужно запомнить эти слова: "manzana"-яблоко; "platano"-банан; "uwa"-виноград; "pera"-груша;
+                 "albaricoqe"-абрикос; "tomato"-помидор; "patato"-картошка; "melocoton"-персик.</p>
+            <h2>в контексте</h2>
+            <p>tu comes patato
+
+             yo como una sandia</p>
         </div>
     )
 }

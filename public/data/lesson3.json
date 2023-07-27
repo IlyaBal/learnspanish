@@ -1,10 +1,12 @@
 {
-  "title": "Las Frutas",
-  "data": [
-    ["La manzana", "Яблоко", "apple.png"],
-    ["El plátano", "Банан", "banana.png"],
-    ["La naranja", "Апельсин", "naranja.jpeg"],
-    ["Pepino", "Огурец", "cucumber-1.jpg"],
-    ["", "", ""]
+  "title": "Oraciones simples 2",
+  "data":[["Comer", "Есть"],
+    ["Yo como", "Я ем"],
+    ["Tu comes", "Ты ешь "],
+    ["El/ella come", "Он/она ест"],
+    ["Nosotros comemos", "Мы едим"],
+    ["Vosotros comeis", "Вы едите"],
+    ["Ellos comen", "Они едят"]
+
   ]
 }

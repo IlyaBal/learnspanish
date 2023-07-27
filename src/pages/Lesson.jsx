@@ -9,6 +9,7 @@ import PracticeCard from '../components/PracticeCard/PracticeCard';
 import Lesson1 from '../components/Text/Lesson1';
 import Lesson2 from '../components/Text/Lesson2'
 import Lesson3 from '../components/Text/Lesson3';
+import Lesson4 from '../components/Text/Lesson4';
 
 //import Lesson3 from '../components/Text/Lesson3'
 export default function Lesson() {
@@ -71,6 +72,8 @@ export default function Lesson() {
 
       case "3":
         return <Lesson3 />
+      case "4":
+        return <Lesson4 />
       default:
         return null;
     }
