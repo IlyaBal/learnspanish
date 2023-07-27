@@ -1,10 +1,9 @@
 import React, { useState } from 'react';
-import Image from '../Image';
-import LearnCard from '../LearnCard/LearnCard';
+import Image from '../common/Image';
 
 // eslint-disable-next-line react/prop-types
 export default function PracticeCard({ word, translation, image }) {
-  const [showDetails, setShowDetails] = useState(false);
+  const [showDetails, setShowDetails] = useState(true);
   const onCardClick = () => {
     setShowDetails(!showDetails);
   };

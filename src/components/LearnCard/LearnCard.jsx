@@ -1,5 +1,5 @@
 import React from 'react';
-import Image from '../Image';
+import Image from '../common/Image';
 
 // eslint-disable-next-line react/prop-types
 export default function LearnCard({ word, translation, image }) {

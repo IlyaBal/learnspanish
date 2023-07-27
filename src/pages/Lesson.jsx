@@ -2,12 +2,12 @@ import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
 import './Lesson.css';
-import Image from '../components/Image';
+import Image from '../components/common/Image';
 import { getImageFolderUrl } from '../utils/metaHelper';
 import LearnCard from '../components/LearnCard/LearnCard';
 import PracticeCard from '../components/PracticeCard/PracticeCard';
 import Lesson1 from '../components/Text/Lesson1';
-import Lesson2 from '../components/Text/Lesson2'
+import Lesson2 from '../components/Text/Lesson2';
 import Lesson3 from '../components/Text/Lesson3';
 import Lesson4 from '../components/Text/Lesson4';
 
@@ -62,23 +62,21 @@ export default function Lesson() {
   };
 
   function getLessonText() {
-
     switch (Id) {
-      case "1":
-        return <Lesson1 />
+      case '1':
+        return <Lesson1 />;
 
-      case "2":
-        return <Lesson2 />
+      case '2':
+        return <Lesson2 />;
 
-      case "3":
-        return <Lesson3 />
-      case "4":
-        return <Lesson4 />
+      case '3':
+        return <Lesson3 />;
+      case '4':
+        return <Lesson4 />;
       default:
         return null;
     }
     return null;
-
   }
   return (
     <div className="word-card">
@@ -87,10 +85,7 @@ export default function Lesson() {
       </h2>
       <hr></hr>
       <div>{getCard()}</div>
-      <div className='lesson-content'>
-        {getLessonText()}
-      </div>
+      <div className="lesson-content">{getLessonText()}</div>
     </div>
   );
-
 }
