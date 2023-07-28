@@ -61,14 +61,7 @@ export default function Dashboard() {
             >
               Lessons!
             </Link>
-            <Link
-              variant="button"
-              color="text.primary"
-              href="/tests"
-              sx={{ my: 1, mx: 1.5 }}
-            >
-              Tests
-            </Link>
+
             <Link
               variant="button"
               color="text.primary"
