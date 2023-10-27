@@ -1,19 +1,18 @@
-import { useState } from 'react';
-import data from '../data/lessons.json';
-import LessonLink from '../components/LessonLink/LessonLink';
+import { Link } from 'react-router-dom';
 
 export default function LessonList() {
-  const [jsonData, setJsonData] = useState(data);
-
-  console.log(JSON.stringify(data));
-
   return (
     <>
       <h2 style={{ color: 'lightblue' }}>Lessons</h2>
       <hr />
-      {jsonData.data.map((d) => (
-        <LessonLink key={d.pageNumber} {...d} />
-      ))}
+
+      <Link className="lesson-link" to="/lesson1">
+        Lesson 1
+      </Link>
+
+      <Link className="lesson-link" to="/lesson2">
+        Lesson 2
+      </Link>
     </>
   );
 }

@@ -5,15 +5,12 @@ import Login from '../pages/Login';
 import Logout from '../pages/Logout';
 import SignUp from '../pages/SignUp';
 import Dashboard from '../pages/Dashboard';
-import Lessons from '../pages/LessonList';
 import Tests from '../pages/Tests';
 import Scores from '../pages/Scores';
 import LessonList from '../pages/LessonList';
-import Lesson from '../pages/Lesson';
-import LessonText from '../components/Text/LessonText';
-import LessonInfoSection from '../components/Text/LessonText';
-import LessonCards from '../components/LessonCards/LessonCards';
-import LessonTest from '../components/LessonTest/LessonTest';
+
+import Lesson1 from '../pages/Lessons/Lesson1';
+import Lesson2 from '../pages/Lessons/Lesson2';
 const Routes = () => {
   const { token } = useAuth();
 
@@ -40,27 +37,18 @@ const Routes = () => {
           element: <Dashboard />,
           children: [
             {
+              path: '/lesson1',
+              element: <Lesson1 />,
+            },
+            {
+              path: '/lesson2',
+              element: <Lesson2 />,
+            },
+            {
               path: '/lessons',
               element: <LessonList />,
             },
-            {
-              path: '/lessons/:Id',
-              element: <Lesson />,
-              children: [
-                {
-                  path: '',
-                  element: <LessonInfoSection />,
-                },
-                {
-                  path: 'card',
-                  element: <LessonCards />,
-                },
-                {
-                  path: 'test',
-                  element: <LessonTest />,
-                },
-              ],
-            },
+
             {
               path: '/tests',
               element: <Tests />,

@@ -26,10 +26,8 @@
 }
 
 .question-view {
-  background: #444;
   padding: 1rem 3rem;
   line-height: 2rem;
-  border: 3px solid white;
 }
 .align-right {
   display: flex !important;
@@ -39,4 +37,19 @@
 .test-view {
   width: 60%;
   margin: auto;
+}
+/* .word-card {
+} */
+
+.word-card-body {
+  margin: auto;
+
+  width: 50%;
+  border-radius: 5px;
+
+  text-align: center;
+}
+
+.word-card-body img {
+  height: 35vh;
 }
