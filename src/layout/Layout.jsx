@@ -41,7 +41,12 @@ export default function Layout() {
       >
         <Toolbar sx={{ flexWrap: 'wrap' }}>
           <Typography variant="h5" color="darkcyan" noWrap sx={{ flexGrow: 1 }}>
-            <Link color="text.primary" href="/lessons" sx={{ my: 1, mx: 1.5 }}>
+            <Link
+              underline="hover"
+              color="text.primary"
+              href="/lessons"
+              sx={{ my: 1, mx: 1.5 }}
+            >
               Learn Spanish!
             </Link>
           </Typography>
