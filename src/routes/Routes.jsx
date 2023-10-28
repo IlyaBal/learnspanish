@@ -9,12 +9,12 @@ import Login from '../pages/User/Login';
 import Logout from '../pages/User/Logout';
 import SignUp from '../pages/User/SignUp';
 import Scores from '../pages/Scores';
-import LessonSectionLinks from '../pages/Lessons/SectionLinks';
+import LessonSectionLinks from '../pages/SectionLinks';
 
-import Lesson1 from '../pages/Lessons/Lesson1';
-import Lesson2 from '../pages/Lessons/Lesson2';
 import Layout from '../layout/Layout';
-import Lesson3 from '../pages/Lessons/Lesson3.';
+
+import { lessonRoutes } from '../pages/Lessons/lessonRoutes';
+
 const Routes = () => {
   const { token } = useAuth();
 
@@ -44,18 +44,7 @@ const Routes = () => {
               index: true,
               element: <Navigate to="/lessons" replace />,
             },
-            {
-              path: '/lesson1',
-              element: <Lesson1 />,
-            },
-            {
-              path: '/lesson2',
-              element: <Lesson2 />,
-            },
-            {
-              path: '/lesson3',
-              element: <Lesson3 />,
-            },
+            ...lessonRoutes,
             {
               path: '/lessons',
               element: <LessonSectionLinks />,
@@ -78,7 +67,8 @@ const Routes = () => {
       ],
     },
   ];
-
+  console.log('Lesson Routes', lessonRoutes);
+  console.log(routesForAuthenticatedOnly);
   // Define routes accessible only to non-authenticated users
   const routesForNotAuthenticatedOnly = [
     {
