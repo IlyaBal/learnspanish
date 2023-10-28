@@ -53,3 +53,11 @@
 .word-card-body img {
   height: 35vh;
 }
+.dashboard {
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+.lesson-link {
+  display: block;
+}

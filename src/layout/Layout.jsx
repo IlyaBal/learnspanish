@@ -8,11 +8,10 @@ import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Link from '../components/common/Link';
 import { signOutUser } from '../utils/firebaseHelpers';
-import { useAuth } from '../provider/authProvider';
+import { useAuth } from '../provider/useAuth';
 import { Outlet, useNavigate } from 'react-router-dom';
-import './Dashboard.css';
 // import { signOutUser } from 'firebase/auth';
-export default function Dashboard() {
+export default function Layout() {
   const { setToken, getToken } = useAuth();
   const navigate = useNavigate();
   // if (!token) return null;
@@ -41,12 +40,14 @@ export default function Dashboard() {
         sx={{ borderBottom: (theme) => `1px solid ${theme.palette.divider}` }}
       >
         <Toolbar sx={{ flexWrap: 'wrap' }}>
-          <Typography variant="h5" color="blue" noWrap sx={{ flexGrow: 1 }}>
-            Learn Spanish!
+          <Typography variant="h5" color="darkcyan" noWrap sx={{ flexGrow: 1 }}>
+            <Link color="text.primary" href="/lessons" sx={{ my: 1, mx: 1.5 }}>
+              Learn Spanish!
+            </Link>
           </Typography>
           <Typography
             variant="h6"
-            color="darkviolet"
+            color="darkgreen"
             noWrap
             sx={{ flexGrow: 1 }}
           >

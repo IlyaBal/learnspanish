@@ -1,16 +1,19 @@
-import { RouterProvider, createBrowserRouter } from 'react-router-dom';
-import { useAuth } from '../provider/authProvider';
+import {
+  Navigate,
+  RouterProvider,
+  createBrowserRouter,
+} from 'react-router-dom';
+import { useAuth } from '../provider/useAuth';
 import { ProtectedRoute } from './ProtectedRoute';
-import Login from '../pages/Login';
-import Logout from '../pages/Logout';
-import SignUp from '../pages/SignUp';
-import Dashboard from '../pages/Dashboard';
-import Tests from '../pages/Tests';
+import Login from '../pages/User/Login';
+import Logout from '../pages/User/Logout';
+import SignUp from '../pages/User/SignUp';
 import Scores from '../pages/Scores';
-import LessonList from '../pages/LessonList';
+import LessonSectionLinks from '../pages/Lessons/SectionLinks';
 
 import Lesson1 from '../pages/Lessons/Lesson1';
 import Lesson2 from '../pages/Lessons/Lesson2';
+import Layout from '../layout/Layout';
 const Routes = () => {
   const { token } = useAuth();
 
@@ -34,8 +37,12 @@ const Routes = () => {
       children: [
         {
           path: '/',
-          element: <Dashboard />,
+          element: <Layout />,
           children: [
+            {
+              index: true,
+              element: <Navigate to="/lessons" replace />,
+            },
             {
               path: '/lesson1',
               element: <Lesson1 />,
@@ -46,13 +53,9 @@ const Routes = () => {
             },
             {
               path: '/lessons',
-              element: <LessonList />,
+              element: <LessonSectionLinks />,
             },
 
-            {
-              path: '/tests',
-              element: <Tests />,
-            },
             {
               path: '/scores',
               element: <Scores />,

@@ -11,8 +11,8 @@ import Grid from '@mui/material/Grid';
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Typography from '@mui/material/Typography';
 import { Link, useNavigate } from 'react-router-dom';
-import { signIn } from '../utils/firebaseHelpers';
-import { useAuth } from '../provider/authProvider';
+import { signIn } from '../../utils/firebaseHelpers';
+import { useAuth } from '../../provider/useAuth';
 
 function Copyright(props) {
   return (
