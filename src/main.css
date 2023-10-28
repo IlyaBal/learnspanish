@@ -59,5 +59,16 @@
 }
 
 .lesson-link {
+  color: #333;
+  text-decoration: none;
+
+  display: block;
+}
+.lesson-link:hover {
+  color: darkcyan;
+  font-weight: bold;
+
+  text-decoration: underline;
+
   display: block;
 }
