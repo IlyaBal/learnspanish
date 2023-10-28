@@ -13,6 +13,10 @@ export default function LessonSectionLinks() {
       <Link className="lesson-link" to="/lesson2">
         Lesson 2
       </Link>
+
+      <Link className="lesson-link" to="/lesson3">
+        Lesson 3
+      </Link>
     </>
   );
 }

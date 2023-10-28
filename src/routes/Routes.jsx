@@ -14,6 +14,7 @@ import LessonSectionLinks from '../pages/Lessons/SectionLinks';
 import Lesson1 from '../pages/Lessons/Lesson1';
 import Lesson2 from '../pages/Lessons/Lesson2';
 import Layout from '../layout/Layout';
+import Lesson3 from '../pages/Lessons/Lesson3.';
 const Routes = () => {
   const { token } = useAuth();
 
@@ -50,6 +51,10 @@ const Routes = () => {
             {
               path: '/lesson2',
               element: <Lesson2 />,
+            },
+            {
+              path: '/lesson3',
+              element: <Lesson3 />,
             },
             {
               path: '/lessons',
